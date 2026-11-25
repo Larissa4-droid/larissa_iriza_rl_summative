@@ -1,0 +1,116 @@
+{
+  "best_overall": "ppo",
+  "models": {
+    "dqn": {
+      "run": 2,
+      "model": "models/dqn/dqn_run_02.pt",
+      "evaluation": {
+        "mean_reward": 32.069024303850036,
+        "std_reward": 2.060959835553969,
+        "waste_pct": 0.20548040792571298,
+        "net_income_rwf": 3212631.0412850394,
+        "kigali_kg": 5985.863383482874,
+        "platform_kg": 3109.4475875170547,
+        "failed_pct": 0.0
+      },
+      "config": {
+        "lr": 0.0003,
+        "gamma": 0.99,
+        "buffer_size": 20000,
+        "batch_size": 64,
+        "eps_end": 0.05,
+        "eps_frac": 0.4,
+        "target_update": 200,
+        "double_dqn": false,
+        "hidden": [
+          128,
+          128
+        ],
+        "loss": "l2",
+        "warmup": 1024,
+        "frames_per_batch": 16,
+        "updates_per_batch": 4,
+        "exploration": "0.05 / 0.4"
+      }
+    },
+    "reinforce": {
+      "run": 3,
+      "model": "models/pg/reinforce_run_03.pt",
+      "evaluation": {
+        "mean_reward": 24.30640191253758,
+        "std_reward": 1.2986127081659682,
+        "waste_pct": 0.0,
+        "net_income_rwf": 2437640.191253758,
+        "kigali_kg": 2541.4265684606034,
+        "platform_kg": 322.42950249191534,
+        "failed_pct": 0.0
+      },
+      "config": {
+        "lr": 0.003,
+        "gamma": 0.99,
+        "episodes_per_update": 8,
+        "entropy_coef": 0.01,
+        "baseline": "normalize",
+        "hidden": [
+          128,
+          128
+        ],
+        "hidden_str": "128x128"
+      }
+    },
+    "ppo": {
+      "run": 10,
+      "model": "models/pg/ppo_run_10.pt",
+      "evaluation": {
+        "mean_reward": 32.56962382500889,
+        "std_reward": 2.1117030957925547,
+        "waste_pct": 0.0,
+        "net_income_rwf": 3258662.382500889,
+        "kigali_kg": 5971.017568758702,
+        "platform_kg": 4037.1808786669217,
+        "failed_pct": 0.0
+      },
+      "config": {
+        "lr": 0.0003,
+        "gamma": 0.99,
+        "gae_lambda": 0.95,
+        "clip_epsilon": 0.2,
+        "entropy_coef": 0.01,
+        "frames_per_batch": 2250,
+        "epochs": 10,
+        "minibatch": 128,
+        "critic_coef": 0.5,
+        "hidden": [
+          128,
+          128
+        ],
+        "rollout_str": "2250 / 10"
+      }
+    },
+    "a2c": {
+      "run": 9,
+      "model": "models/pg/a2c_run_09.pt",
+      "evaluation": {
+        "mean_reward": 32.26767606789864,
+        "std_reward": 2.357162782582333,
+        "waste_pct": 0.0,
+        "net_income_rwf": 3232067.606789864,
+        "kigali_kg": 6374.5562647816605,
+        "platform_kg": 4242.184050846371,
+        "failed_pct": 0.0
+      },
+      "config": {
+        "lr": 0.0007,
+        "gamma": 0.99,
+        "gae_lambda": 1.0,
+        "n_steps": 16,
+        "entropy_coef": 0.05,
+        "critic_coef": 0.5,
+        "hidden": [
+          128,
+          128
+        ]
+      }
+    }
+  }
+}

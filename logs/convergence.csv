@@ -1,0 +1,5 @@
+method,run,converged_at_season,final_train_reward,total_seasons
+DQN,2,681,30.81,1779
+REINFORCE,3,949,19.13,1784
+PPO,10,911,31.22,1801
+A2C,9,811,30.58,1777

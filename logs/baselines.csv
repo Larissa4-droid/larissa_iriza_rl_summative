@@ -1,0 +1,4 @@
+Policy,mean_reward,std_reward,waste_pct,net_income_rwf,kigali_kg,platform_kg,failed_pct
+Always intermediary,22.06,1.28,0.0,2205799.58,0.0,0.0,0.0
+Rule-based seller,21.92,5.75,9.47,2417207.39,5095.34,4781.53,5.0
+Random actions,17.28,5.63,10.93,1997193.37,3652.79,465.2,5.0

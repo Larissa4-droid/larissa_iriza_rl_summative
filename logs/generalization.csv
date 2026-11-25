@@ -1,0 +1,6 @@
+Scenario,DQN,REINFORCE,PPO,A2C,Rule-based,Intermediary
+normal,31.31,23.74,31.56,31.3,21.29,21.66
+price_glut,22.23,18.14,22.26,21.84,14.82,16.24
+big_harvest,39.06,34.72,33.77,33.36,13.57,32.31
+few_buyers,29.99,23.73,30.01,29.27,25.86,21.7
+low_start_stock,31.09,23.37,31.35,30.85,20.43,21.29
