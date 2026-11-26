@@ -10,6 +10,8 @@ Layout
 """
 from __future__ import annotations
 
+import os
+
 import numpy as np
 import pygame
 
@@ -33,11 +35,11 @@ class MarketLinkRenderer:
         self.mode = mode
         self.fps = fps
         pygame.init()
+        self.screen = pygame.Surface((W, H))          # everything is drawn here at full size
         if mode == "human":
             pygame.display.set_caption("MarketLink RL: tomato cooperative selling advisor")
-            self.screen = pygame.display.set_mode((W, H))
-        else:
-            self.screen = pygame.Surface((W, H))
+            scale = float(os.environ.get("MARKETLINK_SCALE", "1"))
+            self.window = pygame.display.set_mode((int(W * scale), int(H * scale)))
         self.clock = pygame.time.Clock()
         self.f_title = pygame.font.Font(None, 34)
         self.f_big = pygame.font.Font(None, 30)
@@ -90,6 +92,7 @@ class MarketLinkRenderer:
         self._dashboard(env)
 
         if self.mode == "human":
+            pygame.transform.smoothscale(s, self.window.get_size(), self.window)
             pygame.display.flip()
             self.clock.tick(self.fps)
             return None

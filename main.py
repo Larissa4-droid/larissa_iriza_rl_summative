@@ -38,6 +38,7 @@ def load_agent(algo: str | None):
 
 
 def run(args):
+    os.environ["MARKETLINK_SCALE"] = str(args.scale)
     if args.random:
         algo, net = "random", None
         print("Running an untrained agent that picks random actions")
@@ -83,6 +84,7 @@ if __name__ == "__main__":
     p.add_argument("--episodes", type=int, default=1)
     p.add_argument("--seed", type=int, default=30_000, help="season seed (30000+ never used in training)")
     p.add_argument("--fps", type=int, default=3, help="simulated days per second in the window")
+    p.add_argument("--scale", type=float, default=1.0, help="window size, e.g. 0.6 for a smaller window")
     p.add_argument("--random", action="store_true")
     p.add_argument("--no-render", action="store_true")
     run(p.parse_args())
